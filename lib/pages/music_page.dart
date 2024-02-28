@@ -107,7 +107,12 @@ class _ContentState extends State<Content> {
                 padding: const EdgeInsets.symmetric(horizontal: 50.0),
                 child: ProgressBar(
                   progress: Duration(seconds: 50),
+                  buffered: Duration(seconds: 100),
                   total: Duration(seconds: 220),
+                  bufferedBarColor: Colors.grey.shade500,
+                  baseBarColor: Colors.grey.shade400,
+                  thumbColor: Colors.greenAccent,
+                  progressBarColor: Colors.greenAccent,
                   onSeek: (duration) {
                     print('User selected a new time: $duration');
                   },
