@@ -1,4 +1,5 @@
 /// Import resource yang diperlukan
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vimus/components/vimus_drawer.dart';
 import 'package:vimus/components/neu_box.dart';
@@ -51,13 +52,17 @@ class _ContentState extends State<Content> {
           Align(
             alignment: Alignment.center,
             child: Padding(
-              padding: const EdgeInsets.only(top: 40.0),
+              padding: const EdgeInsets.only(top: 50.0),
               child: NeuBox(
                 child: Column(
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.asset('images/music_cover_2.png'),
+                      child: Image.asset(
+                        'images/music_cover_1.png',
+                        width: 250,
+                        height: 250,
+                      ),
                     ),
                   ],
                 ),
@@ -71,11 +76,11 @@ class _ContentState extends State<Content> {
             children: <Widget>[
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(50.0, 20.0, 50.0, 20.0),
+                  padding: const EdgeInsets.fromLTRB(50.0, 40.0, 50.0, 20.0),
                   child: Column(
                     children: [
                       Text(
-                        'Just the Way You Are',
+                        "That's What I Like",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 30,
@@ -98,17 +103,15 @@ class _ContentState extends State<Content> {
               ),
             ],
           ),
-          const SizedBox(height: 25),
-
+          const SizedBox(height: 20),
           /// Column tempat slider durasi musik
           Column(
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 50.0),
                 child: ProgressBar(
-                  progress: Duration(seconds: 50),
-                  buffered: Duration(seconds: 100),
-                  total: Duration(seconds: 220),
+                  progress: const Duration(seconds: 50),
+                  total: const Duration(minutes: 3, seconds: 26),
                   bufferedBarColor: Colors.grey.shade500,
                   baseBarColor: Colors.grey.shade400,
                   thumbColor: Colors.greenAccent,
@@ -117,6 +120,40 @@ class _ContentState extends State<Content> {
                     print('User selected a new time: $duration');
                   },
                 ),
+              ),
+              const SizedBox(height: 15),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.swap_horiz_rounded),
+                    color: Colors.black,
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.skip_previous_rounded),
+                    color: Colors.black,
+                    iconSize: 40,
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.play_circle_rounded),
+                    color: Colors.black,
+                    iconSize: 60,
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.skip_next_rounded),
+                    color: Colors.black,
+                    iconSize: 40,
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.loop_rounded),
+                    color: Colors.black,
+                  ),
+                ],
               ),
             ],
           ),
