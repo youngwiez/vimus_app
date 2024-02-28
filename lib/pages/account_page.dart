@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vimus/components/vimus_drawer.dart';
+import 'package:vimus/components/custom_button.dart';
 
 /// Class halaman akun
 class AccountPage extends StatelessWidget {
@@ -51,7 +52,7 @@ class _ContentState extends State<Content> {
                     children: [
                       /// Profile picture
                       const CircleAvatar(
-                        radius: 50,
+                        radius: 60,
                         backgroundImage: AssetImage('images/profile_pict.jpg'),
                       ),
 
@@ -59,7 +60,7 @@ class _ContentState extends State<Content> {
                       InkWell(
                         onTap: () {},
                         child: const CircleAvatar(
-                          radius: 12,
+                          radius: 15,
                           backgroundColor: Colors.greenAccent,
                           child: Icon(Icons.edit_rounded,
                             size: 15,
@@ -70,38 +71,31 @@ class _ContentState extends State<Content> {
                     ],
                   ),
 
-                  /// Nama akun
+                  /// Nama akun dan username
                   Padding(
                     padding: const EdgeInsets.all(3.0),
-                    child: Text(
-                      'Raka Wisesa',
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                    child: Column(
+                      children: [
+                        Text(
+                          'Raka Wisesa',
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                        SizedBox(height: 5), // Spasi antara teks utama dan subtitle
+                        Text(
+                          '@youngwiez',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.grey.shade800, // Mengatur warna abu-abu untuk subtitle
+                          ),
+                        ),
+                      ],
                     ),
                   ),
 
-                  /// Username
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 50.0),
-                          child: Text(
-                            '@youngwiez',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -126,7 +120,6 @@ class _ContentState extends State<Content> {
                                 .copyWith(color: Colors.grey,
                             ),
                           ),
-
                         ],
                       ),
 
@@ -157,7 +150,7 @@ class _ContentState extends State<Content> {
                       Column(
                         children: [
                           Text(
-                            '899',
+                            '829',
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -181,7 +174,7 @@ class _ContentState extends State<Content> {
                       Column(
                         children: [
                           Text(
-                            '1,066',
+                            '1,060',
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -201,14 +194,21 @@ class _ContentState extends State<Content> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 30),
 
                   /// Button edit profil
                   Column(
                     children: <Widget>[
-                      FilledButton(
+                      ElevatedButton(
+                        style: buttonPrimary,
                         onPressed: () {},
-                        child: const Text('Edit Profile'),
+                        child: const Text('Edit Profile',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -217,7 +217,6 @@ class _ContentState extends State<Content> {
             ),
           ),
           const SizedBox(height: 20),
-          
         ],
       ),
     );
